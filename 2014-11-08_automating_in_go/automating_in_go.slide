@@ -1,0 +1,47 @@
+Automating in Go
+golang @ phraseapp.com
+8 Nov 2014
+Tags: golang, phraseapp
+
+Tobias Schwab
+Dynport GmbH
+tobias.schwab@dynport.de
+http://phraseapp.com
+http://dynport.de
+@tobstarr
+
+* golang
+
+- typesafe
+- static
+- gc
+- stdlib
+- interfaces
+- packaging
+- concurrency
+- FAAAAST
+
+* example
+
+.play example/main.go
+
+* stdlib
+
+- net/http
+- encoding/json
+- 
+
+* about phraseapp.com
+
+- we help you translate your business
+- Ruby on Rails
+- *AWS:* RDS, ELB, S3, AutoScaling, SQS, Route53, ...
+- *Custom*: Nginx, Unicorn, ElasticSearch, Syslog, VPN, ...
+
+* why golang
+
+- type safety
+- distribution
+- zero dependencies
+- tooling
+
