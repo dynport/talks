@@ -5,15 +5,12 @@ Tags: golang, phraseapp
 
 Tobias Schwab
 Dynport GmbH
+@tobstarr
 
-References
 http://urknall.dynport.de/
 https://github.com/dynport/dgtk
 https://github.com/dynport/gocloud
 
-Contact
-tobias.schwab@dynport.de
-@tobstarr
 http://phraseapp.com
 http://dynport.de
 
@@ -34,43 +31,54 @@ http://dynport.de
 
 * stdlib
 
+- os
+- io
+- strings
+- os/exec
 - net/http
-- encoding/json
+- encoding/[json|xml|base64]
+- compress/[gzip|bzip2]
+- archive/tar
+- database/sql
+- crypto/[aes|rsa|des...]
+- testing
+- ...
 
-* about phraseapp.com
+* phraseapp.com
 
 - we help you translate your business
 - Ruby on Rails
 - *AWS:* RDS, ELB, S3, AutoScaling, SQS, Route53, ...
 - *Custom*: Nginx, Unicorn, ElasticSearch, Syslog, VPN, ...
 
-* why
+* why golang
 
 - type safety
 - distribution
 - zero dependencies
+- robust
 - tooling
 
 * how
 
-- "one tool to rule them all"
+- one tool to rule them all
 - CLI
 - *integrations:* AWS, GitHub, Hipchat, SSH, Kibana, local, ...
+- *infrastructure:* cloudformation
+- *configuration:* urknall
 
-* infrastructure
+* deployment philosophie
 
-- cloudformation
+- immutable infrastructure
+- AMI
+- AutoScaling
 
-* configuration
-
-- urknall
-
-* deployment
+* deployment workflow
 
 - create GM
 - update ASG
-- scale up
-- scale down
+- scale double
+- scale reset
 - monitor
 
 * commands
@@ -79,4 +87,13 @@ http://dynport.de
 - gm/create   [--revision <REVISION>]
 - ami/deploy  AMI
 - [web|worker]/scale/[up|down|double|reset]
+- logs/tail
+- monit
+- ssh/into
 - server
+
+* monitoring
+
+- indexer
+- elasticsearch
+- metrix
