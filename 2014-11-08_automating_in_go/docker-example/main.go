@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -73,9 +74,9 @@ func run() error {
 		return err
 	}
 	logger.Printf("got ip: %q", c.NetworkSettings.IPAddress)
-	for i := 0; i < 10; i++ {
+	printed := false
+	for i := 0; i < 100; i++ {
 		err := func() error {
-			logger.Printf("checking")
 			rsp, err = cl.Get("http://" + c.NetworkSettings.IPAddress + ":8080")
 			if err != nil {
 				return err
@@ -84,13 +85,18 @@ func run() error {
 			if err := checkResponse(rsp); err != nil {
 				return err
 			}
-			logger.Printf("got reponse %s", rsp.Status)
+			m := "got reponse %s"
+			if printed {
+				m = "\n" + m
+			}
+			logger.Printf(m, rsp.Status)
 			io.Copy(os.Stdout, rsp.Body)
 			return nil
 		}()
 		if err != nil {
-			logger.Printf("ERROR: %q", err)
-			time.Sleep(1 * time.Second)
+			printed = true
+			fmt.Print(".")
+			time.Sleep(100 * time.Millisecond)
 		} else {
 			break
 		}
