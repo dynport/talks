@@ -5,10 +5,17 @@ Tags: golang, phraseapp
 
 Tobias Schwab
 Dynport GmbH
+
+References
+http://urknall.dynport.de/
+https://github.com/dynport/dgtk
+https://github.com/dynport/gocloud
+
+Contact
 tobias.schwab@dynport.de
+@tobstarr
 http://phraseapp.com
 http://dynport.de
-@tobstarr
 
 * golang
 
@@ -19,7 +26,7 @@ http://dynport.de
 - interfaces
 - packaging
 - concurrency
-- FAAAAST
+- fast
 
 * example
 
@@ -29,7 +36,6 @@ http://dynport.de
 
 - net/http
 - encoding/json
-- 
 
 * about phraseapp.com
 
@@ -38,10 +44,39 @@ http://dynport.de
 - *AWS:* RDS, ELB, S3, AutoScaling, SQS, Route53, ...
 - *Custom*: Nginx, Unicorn, ElasticSearch, Syslog, VPN, ...
 
-* why golang
+* why
 
 - type safety
 - distribution
 - zero dependencies
 - tooling
 
+* how
+
+- "one tool to rule them all"
+- CLI
+- *integrations:* AWS, GitHub, Hipchat, SSH, Kibana, local, ...
+
+* infrastructure
+
+- cloudformation
+
+* configuration
+
+- urknall
+
+* deployment
+
+- create GM
+- update ASG
+- scale up
+- scale down
+- monitor
+
+* commands
+
+- stacks/provision <NAME>
+- gm/create   [--revision <REVISION>]
+- ami/deploy  AMI
+- [web|worker]/scale/[up|down|double|reset]
+- server
