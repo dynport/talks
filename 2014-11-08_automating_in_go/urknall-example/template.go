@@ -32,6 +32,10 @@ func (tpl *Template) Render(p urknall.Package) {
 	nx := &Nginx{Version: "1.4.7"}
 	p.AddTemplate("nginx-"+nx.Version, nx)
 
+	// postgres
+	pg := &Postgres{Version: "9.3.4"}
+	p.AddTemplate("postgres-"+pg.Version, pg)
+
 	// redis
 	//rd := &Redis{Version: "2.8.17"}
 	//p.AddTemplate("redis-"+rd.Version, rd)
